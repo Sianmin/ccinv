@@ -4,7 +4,7 @@ Inventory dashboard for [Claude Code](https://docs.claude.com/en/docs/claude-cod
 
 Zero LLM calls. Zero servers. Zero runtime dependencies. `npx ccinv` and you get a colored terminal table; pass `--html` to open a single-file dashboard in your browser instead.
 
-![ccinv terminal output](assets/screenshot.png)
+![ccinv terminal output](https://raw.githubusercontent.com/Sianmin/ccinv/main/assets/screenshot.png)
 
 ## Why
 
@@ -28,7 +28,7 @@ For a richer view, render an HTML dashboard:
 ccinv --html
 ```
 
-![HTML dashboard](assets/dashboard.png)
+![HTML dashboard](https://raw.githubusercontent.com/Sianmin/ccinv/main/assets/dashboard.png)
 
 ## Usage
 

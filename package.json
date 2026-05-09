@@ -1,6 +1,6 @@
 {
   "name": "ccinv",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Inventory dashboard for Claude Code resources (commands, skills, agents, hooks, MCP, plugins) across user / project / local scopes",
   "type": "module",
   "bin": {
