@@ -4,7 +4,7 @@
   "description": "Inventory dashboard for Claude Code resources (commands, skills, agents, hooks, MCP, plugins) across user / project / local scopes",
   "type": "module",
   "bin": {
-    "ccinv": "./dist/cli.js"
+    "ccinv": "dist/cli.js"
   },
   "files": [
     "dist",
