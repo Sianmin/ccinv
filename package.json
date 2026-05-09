@@ -1,0 +1,49 @@
+{
+  "name": "ccinv",
+  "version": "0.1.0",
+  "description": "Inventory dashboard for Claude Code resources (commands, skills, agents, hooks, MCP, plugins) across user / project / local scopes",
+  "type": "module",
+  "bin": {
+    "ccinv": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "cli",
+    "dashboard",
+    "inventory",
+    "skills",
+    "agents",
+    "hooks",
+    "mcp",
+    "plugins"
+  ],
+  "author": "Sianmin <jeinu95@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sianmin/ccinv.git"
+  },
+  "homepage": "https://github.com/Sianmin/ccinv#readme",
+  "bugs": {
+    "url": "https://github.com/Sianmin/ccinv/issues"
+  }
+}
