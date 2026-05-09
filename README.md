@@ -4,7 +4,7 @@ Inventory dashboard for [Claude Code](https://docs.claude.com/en/docs/claude-cod
 
 Zero LLM calls. Zero servers. Zero runtime dependencies. `npx ccinv` and you get a colored terminal table; pass `--html` to open a single-file dashboard in your browser instead.
 
-![demo](assets/demo.gif)
+![ccinv terminal output](assets/screenshot.png)
 
 ## Why
 
@@ -20,22 +20,7 @@ It's deterministic file-system work — there's no reason to burn LLM tokens for
 npx ccinv
 ```
 
-By default, ccinv prints a colored table to your terminal:
-
-```
-ccinv — Claude Code inventory
-project: ~/projects/my-app
-
-OVERVIEW
-  commands 28 · skills 47 · agents 22 · hooks 3 · mcp 6 · plugins 36
-
-COMMANDS (28)
-  /briefing                 Briefing                            project
-  /claude-resources         Claude Resources Dashboard          project
-  /clip                     ...                                 project
-  /modernize-assess         Full discovery & portfolio analysis plugin:code-modernization
-  ...
-```
+That's it — no install, no config. ccinv prints a colored inventory table for the current scope (the screenshot above is from a real Obsidian vault project).
 
 For a richer view, render an HTML dashboard:
 
@@ -43,7 +28,7 @@ For a richer view, render an HTML dashboard:
 ccinv --html
 ```
 
-![dashboard](assets/dashboard.png)
+![HTML dashboard](assets/dashboard.png)
 
 ## Usage
 
