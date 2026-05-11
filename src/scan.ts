@@ -316,6 +316,8 @@ export async function scan(opts: ScanOptions = {}): Promise<Inventory> {
   const hooks: HookResource[] = [];
   const mcp: McpResource[] = [];
 
+  const userClaudeJson = await readJsonSafe(join(home, ".claude.json"));
+
   if (wantsScope("user")) {
     commands.push(
       ...(await scanCommandsDir(join(home, ".claude", "commands"), "user")),
@@ -337,7 +339,6 @@ export async function scan(opts: ScanOptions = {}): Promise<Inventory> {
         ...extractMcp(userSettings, join(home, ".claude", "settings.json"), "user"),
       );
     }
-    const userClaudeJson = await readJsonSafe(join(home, ".claude.json"));
     if (userClaudeJson) {
       mcp.push(...extractMcp(userClaudeJson, join(home, ".claude.json"), "user"));
     }
@@ -356,6 +357,26 @@ export async function scan(opts: ScanOptions = {}): Promise<Inventory> {
       mcp.push(
         ...extractMcp(projSettings, join(proj, "settings.json"), "project"),
       );
+    }
+    const projMcpJson = await readJsonSafe(join(projectRoot, ".mcp.json"));
+    if (projMcpJson) {
+      mcp.push(
+        ...extractMcp(projMcpJson, join(projectRoot, ".mcp.json"), "project"),
+      );
+    }
+    if (
+      userClaudeJson &&
+      userClaudeJson.projects &&
+      typeof userClaudeJson.projects === "object"
+    ) {
+      const projEntry = (userClaudeJson.projects as Record<string, unknown>)[
+        projectRoot
+      ];
+      if (projEntry && typeof projEntry === "object") {
+        mcp.push(
+          ...extractMcp(projEntry, join(home, ".claude.json"), "project"),
+        );
+      }
     }
   }
 
